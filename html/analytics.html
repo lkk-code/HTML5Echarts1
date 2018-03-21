@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>analytics_revenue</title>
+    <link rel="shortcut icon" href="../img/index/logo_cloud.ico"/>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/revenue.css">
+    <link rel="stylesheet" href="../css/layui-v2.2.5/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/analytics_user.css">
+    <link rel="stylesheet" href="../css/bod_6.css">
+    <script src="../js/flexible.js"></script>
+</head>
+<body style="font-size: 10px;">
+    <!--头部-->
+    <div id="header_dev" class="clear"></div>
+    <!--右侧-->
+    <div id="left_dev" class="clear"></div>
+    <div class="box_zt clear" style="padding-left: 1.28rem">
+        <div class="box_fzt analytics_user clear">
+            <!--1-->
+            <div class="bod_1 row_1_bod clear">
+                <div class="fl item_box">
+                    <div class="top_box">
+                        <div class="gl_fs68 gl_color_blue gl_font_weight_b">
+                            50.68<span class="gl_fs30">M</span>
+                        </div>
+                        <span class="gl_color_green fs20 gl_font_weight_n dl trend pa">7.3%</span>
+                        <div class="fs20 sub_title">Total Registered Users</div>
+                    </div>
+                    <div class="bottom_box clear">
+                        <div class="fl">
+                            <img class="icons" src="../img/index/icons_1.png" alt="">
+                            <div class="fs36 gl_color_blue gl_font_weight_b">
+                                2.28M
+                            </div>
+                            <span class="gl_color_green fs20 gl_font_weight_n dl trend pa" style="top: 0.7rem;left: 1.6rem;">5.7%</span>
+                            <div class="fs16 sub_title">Total Paid Users</div>
+                        </div>
+                        <div class="fl">
+                            <img class="icons" src="../img/index/icons_2.png" alt="">
+                            <div class="fs36 gl_color_blue gl_font_weight_b">
+                                9.22<span class="fs20">k</span>
+                            </div>
+                            <span class="gl_color_green fs20 gl_font_weight_n dl trend pa" style="top: 0.7rem;left: 1.5rem;">4.2%</span>
+                            <div class="fs16 sub_title">Monthly Active Users</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Users</div>
+                    <div class="w_100 h_100" id="charts_1"></div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Subscribers</div>
+                    <div class="w_100 h_100" id="charts_2"></div>
+                </div>
+            </div>
+            <!--2-->
+            <div class="bod_1 row_2_bod clear">
+                <div class="fl item_box">
+                    <div class="pa gl_title">Terminal Type Distribution</div>
+                    <div class="w_100 h_100" id="charts_3"></div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Daily Active User</div>
+                    <div class="timer_box pa">
+                        <input id="timer" type="text" class="layui-input gl-timer-input" placeholder="">
+                    </div>
+                    <div class="w_100 h_100" id="charts_4"></div>
+                </div>
+            </div>
+            <!--3-->
+            <div class="bod_1 row_3_bod clear">
+                <div class="fl item_box clear">
+                    <div class="fl item_child_box gl_border">
+                        <div class="pa gl_title">Gender Distribution </div>
+                        <div class="pie_common">
+                            <div class="w_100 h_100" id="charts_5"></div>
+                            <div class="title_box" style="">54%</div>
+                            <div class="name_box" style="">Male</div>
+                        </div>
+                    </div>
+                    <div class="fl item_child_box gl_border">
+                        <div class="pa gl_title">Region Distribution</div>
+                        <div class="w_100 h_100" id="charts_6"></div>
+                    </div>
+                    <div class="fl item_child_box gl_border">
+                        <div class="pa gl_title">ARPU</div>
+                        <div class="pie_box" style="width: 1.5rem;height: 1.5rem;" >
+                            <div id="charts_7" class="w_100 h_100"></div>
+                            <div class="title_box">ARPU($)</div>
+                        </div>
+                        <div class="legend_box">
+                            <div class="item clear"><i class="icons_rect"></i>>20 <span class="fr">18%</span></div>
+                            <div class="item clear"><i class="icons_rect"></i>5~10 <span class="fr">15%</span></div>
+                            <div class="item clear"><i class="icons_rect"></i>15-20<span class="fr">23%</span></div>
+                            <div class="item clear"><i class="icons_rect"></i> <5 <span class="fr">9%</span></div>
+                            <div class="item clear"><i class="icons_rect"></i>10~15 <span class="fr">35%</span></div>
+                        </div>
+                    </div>
+                    <div class="fl item_child_box gl_border">
+                        <div class="pa gl_title">Interest Distribution</div>
+                        <div class="w_100 h_100" id="charts_8"></div>
+                    </div>
+                </div>
+            </div>
+            <!--4-->
+            <div class="bod_1 row_4_bod clear">
+                <div class="fl item_box">
+                    <div class="pa gl_title">Viewing Duration</div>
+                    <div class="w_100 h_100" id="charts_9"></div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Duration Distribution (min)</div>
+                    <div class="wrap_pie_box clear">
+                        <div class="pie_box fl">
+                            <div class="w_100 h_100" id="pie_1"></div>
+                            <div class="title_box">35%</div>
+                            <div class="bottom_box"><15</div>
+                        </div>
+                        <div class="pie_box fl">
+                            <div class="w_100 h_100" id="pie_2"></div>
+                            <div class="title_box">37%</div>
+                            <div class="bottom_box">15~30</div>
+                        </div>
+                        <div class="pie_box fl">
+                            <div class="w_100 h_100" id="pie_3"></div>
+                            <div class="title_box">13%</div>
+                            <div class="bottom_box">30~60</div>
+                        </div>
+                        <div class="pie_box fl">
+                            <div class="w_100 h_100" id="pie_4"></div>
+                            <div class="title_box">9%</div>
+                            <div class="bottom_box">60~120</div>
+                        </div>
+                        <div class="pie_box fl">
+                            <div class="w_100 h_100" id="pie_5"></div>
+                            <div class="title_box">6%</div>
+                            <div class="bottom_box">>120</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--5-->
+            <div class="bod_1 row_5_bod clear">
+                <div class="fl item_box " style="overflow: hidden;">
+                <div class="pa gl_title">EPG(Past week)</div>
+                <svg id="EPG" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              viewBox="0 0 1715 560">
+                    <defs>
+                        <linearGradient id="PSgrad_0" x1="0%" x2="100%" y1="0%" y2="0%">
+                            <stop offset="0%" stop-color="rgb(17,49,246)" stop-opacity="1" />
+                            <stop offset="100%" stop-color="rgb(23,163,253)" stop-opacity="1" />
+                        </linearGradient>
+                        <linearGradient id="PSgrad_1" x1="0%" x2="100%" y1="0%" y2="0%" style="border:1px solid red;">
+                            <stop offset="0%" stop-color="rgb(28,149,168)" stop-opacity="1" />
+                            <stop offset="100%" stop-color="rgb(46,211,225)" stop-opacity="1" />
+                        </linearGradient>
+                        <linearGradient id="PSgrad_2" x1="0%" x2="100%" y1="0%" y2="0%">
+                            <stop offset="0%" stop-color="rgb(238,155,78)" stop-opacity="1" />
+                            <stop offset="100%" stop-color="rgb(243,204,92)" stop-opacity="1" />
+                        </linearGradient>
+                        <linearGradient id="PSgrad_3" x1="0%" x2="100%" y1="0%" y2="0%">
+                            <stop offset="0%" stop-color="rgb(11,175,169)" stop-opacity="1" />
+                            <stop offset="100%" stop-color="rgb(84,209,161)" stop-opacity="1" />
+                        </linearGradient>
+
+                    </defs>
+                <!--左连接线-->
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,19.439 C198.000,19.439 240.522,13.658 338.570,44.539 C436.617,75.419 498.022,20.443 498.022,20.443 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,106.439 C198.000,106.439 240.522,100.659 338.570,131.539 C436.617,162.419 498.022,107.443 498.022,107.443 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,195.439 C198.000,195.439 240.522,189.658 338.570,220.539 C436.617,251.420 498.022,196.443 498.022,196.443 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,275.439 C198.000,275.439 240.522,269.658 338.570,300.539 C436.617,331.420 498.022,276.443 498.022,276.443 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,357.439 C198.000,357.439 240.522,351.659 338.570,382.539 C436.617,413.419 498.022,358.443 498.022,358.443 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M198.000,432.439 C198.000,432.439 240.522,428.659 338.570,460.539 C436.617,492.419 498.022,440.443 498.022,440.443 "/>
+
+                <!--中连接线-->
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,103.000 C681.000,103.000 753.772,121.144 840.498,60.848 C927.225,0.551 982.000,19.990 982.000,19.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,115.000 C681.000,115.000 753.772,144.135 840.498,130.848 C927.225,110.551 982.000,103.990 982.000,105.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,128.000 C681.000,128.000 753.772,150.135 840.498,160.848 C927.225,175.551 982.000,185.990 982.000,193.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,135.000 C681.000,135.000 753.772,165.135 840.498,200.848 C927.225,236.551 982.000,260.990 982.000,268.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,140.000 C681.000,140.000 753.772,186.135 840.498,240.848 C927.225,300.551 982.000,350.990 982.000,350.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,150.000 C681.000,160.000 753.772,206.135 840.498,284.848 C927.225,355.551 982.000,430.990 982.000,438.990 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                          d="M681.000,150.000 C681.000,160.000 753.772,206.135 840.498,284.848 C927.225,355.551 982.000,430.990 982.000,438.990 "/>
+                <!--右连接线-->
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.502" fill="none" d="M1163.994,21.174 C1163.994,21.174 1236.512,39.648 1323.337,37.560 C1411.347,35.443 1465.000,27.704 1465.000,27.704 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.502" fill="none" d="M1163.994,35.174 C1163.994,35.174 1236.512,65.648 1323.337,76.560 C1411.347,85.443 1465.000,90.704 1465.000,100.704 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(215,216,221)" stroke-width="2px" stroke-dasharray="8, 4" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.502" fill="none" d="M1163.994,44.174 C1163.994,45.174 1236.512,85.648 1323.337,106.560 C1411.347,130.443 1465.000,178.704 1465.000,178.704 "/>
+
+                <!--5-->
+                <!--左矩形 -->
+                    <path fill="url(#PSgrad_0)"
+                          d="M4.000,-0.000 L201.000,-0.000 C203.209,-0.000 205.000,1.791 205.000,4.000 L205.000,477.000 C205.000,479.209 203.209,481.000 201.000,481.000 L4.000,481.000 C1.791,481.000 -0.000,479.209 -0.000,477.000 L-0.000,4.000 C-0.000,1.791 1.791,-0.000 4.000,-0.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="16px" x="64px" y="203.062px">Homepage</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="26px" x="36px" y="247px">&#54;&#55;&#44;&#50;&#51;&#53;&#44;&#53;&#50;&#53;</text>
+                <!--左中矩形-->
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,-0.000 L681.000,-0.000 C683.209,-0.000 685.000,1.791 685.000,4.000 L685.000,62.000 C685.000,64.209 683.209,66.000 681.000,66.000 L490.000,66.000 C487.791,66.000 486.000,64.209 486.000,62.000 L486.000,4.000 C486.000,1.791 487.791,-0.000 490.000,-0.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="564px" y="24px">Live TV</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="18.77px" x="540px" y="50px">23,100,525</text>
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,83.000 L681.000,83.000 C683.209,83.000 685.000,84.791 685.000,87.000 L685.000,145.000 C685.000,147.209 683.209,149.000 681.000,149.000 L490.000,149.000 C487.791,149.000 486.000,147.209 486.000,145.000 L486.000,87.000 C486.000,84.791 487.791,83.000 490.000,83.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255,255,255)" font-size="14px" x="570px" y="105px">VOD</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255,255,255)" font-size="18.77px" x="540px" y="130px">21,080,525</text>
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,166.000 L681.000,166.000 C683.209,166.000 685.000,167.791 685.000,170.000 L685.000,228.000 C685.000,230.209 683.209,232.000 681.000,232.000 L490.000,232.000 C487.791,232.000 486.000,230.209 486.000,228.000 L486.000,170.000 C486.000,167.791 487.791,166.000 490.000,166.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="571px" y="188.062px">OTT1</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="540px" y="218.062px">3,920,520</text>
+
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,249.000 L681.000,249.000 C683.209,249.000 685.000,250.791 685.000,253.000 L685.000,311.000 C685.000,313.209 683.209,315.000 681.000,315.000 L490.000,315.000 C487.791,315.000 486.000,313.209 486.000,311.000 L486.000,253.000 C486.000,250.791 487.791,249.000 490.000,249.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="570px" y="271.062px">OTT2</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="540px" y="301.062px">3,920,520</text>
+
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,332.000 L681.000,332.000 C683.209,332.000 685.000,333.791 685.000,336.000 L685.000,394.000 C685.000,396.209 683.209,398.000 681.000,398.000 L490.000,398.000 C487.791,398.000 486.000,396.209 486.000,394.000 L486.000,336.000 C486.000,333.791 487.791,332.000 490.000,332.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="570px" y="354.062px">OTT3</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="540px" y="384.062px">3,920,520</text>
+
+                    <path fill="url(#PSgrad_1)"
+                          d="M490.000,415.000 L681.000,415.000 C683.209,415.000 685.000,416.791 685.000,419.000 L685.000,477.000 C685.000,479.209 683.209,481.000 681.000,481.000 L490.000,481.000 C487.791,481.000 486.000,479.209 486.000,477.000 L486.000,419.000 C486.000,416.791 487.791,415.000 490.000,415.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="554px" y="437.062px">App&#32;Store</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="540px" y="467.062px">3,800,512</text>
+            <!--右中矩形-->
+                    <path fill="url(#PSgrad_2)"
+                          d="M973.000,-0.000 L1164.000,-0.000 C1166.209,-0.000 1168.000,1.791 1168.000,4.000 L1168.000,62.000 C1168.000,64.209 1166.209,66.000 1164.000,66.000 L973.000,66.000 C970.791,66.000 969.000,64.209 969.000,62.000 L969.000,4.000 C969.000,1.791 970.791,-0.000 973.000,-0.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1050px" y="22.0619999999999px">Movie</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1019px" y="52.0619999999999px">10,050,520</text>
+                    <path fill="url(#PSgrad_2)"
+                          d="M973.000,83.000 L1164.000,83.000 C1166.209,83.000 1168.000,84.791 1168.000,87.000 L1168.000,145.000 C1168.000,147.209 1166.209,149.000 1164.000,149.000 L973.000,149.000 C970.791,149.000 969.000,147.209 969.000,145.000 L969.000,87.000 C969.000,84.791 970.791,83.000 973.000,83.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1042px" y="105.062px">Children</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1023px" y="135.062px">5,020,520</text>
+                    <path fill="url(#PSgrad_2)"
+                          d="M973.000,166.000 L1164.000,166.000 C1166.209,166.000 1168.000,167.791 1168.000,170.000 L1168.000,228.000 C1168.000,230.209 1166.209,232.000 1164.000,232.000 L973.000,232.000 C970.791,232.000 969.000,230.209 969.000,228.000 L969.000,170.000 C969.000,167.791 970.791,166.000 973.000,166.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1026px" y="188.102px">Variety&#32;Show</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1023px" y="218.062px">2,101,520</text>
+                    <path fill="url(#PSgrad_2)"
+                          d="M973.000,249.000 L1164.000,249.000 C1166.209,249.000 1168.000,250.791 1168.000,253.000 L1168.000,311.000 C1168.000,313.209 1166.209,315.000 1164.000,315.000 L973.000,315.000 C970.791,315.000 969.000,313.209 969.000,311.000 L969.000,253.000 C969.000,250.791 970.791,249.000 973.000,249.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1039px" y="271.062px">TV&#32;Series</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1025px" y="301.062px">1,541,510</text>
+                    <path fill="url(#PSgrad_2)"
+                          d="M973.000,332.000 L1164.000,332.000 C1166.209,332.000 1168.000,333.791 1168.000,336.000 L1168.000,394.000 C1168.000,396.209 1166.209,398.000 1164.000,398.000 L973.000,398.000 C970.791,398.000 969.000,396.209 969.000,394.000 L969.000,336.000 C969.000,333.791 970.791,332.000 973.000,332.000 Z"/>
+                    <path fill="url(#PSgrad_2)"
+                          d="M971.000,415.000 L1166.000,415.000 C1167.104,415.000 1168.000,415.895 1168.000,417.000 L1168.000,441.000 C1168.000,442.104 1167.104,443.000 1166.000,443.000 L971.000,443.000 C969.895,443.000 969.000,442.104 969.000,441.000 L969.000,417.000 C969.000,415.895 969.895,415.000 971.000,415.000 Z"/>
+
+                    <path fill="url(#PSgrad_2)"
+                          d="M971.000,447.000 L1166.000,447.000 C1167.104,447.000 1168.000,447.895 1168.000,449.000 L1168.000,465.000 C1168.000,466.105 1167.104,467.000 1166.000,467.000 L971.000,467.000 C969.895,467.000 969.000,466.105 969.000,465.000 L969.000,449.000 C969.000,447.895 969.895,447.000 971.000,447.000 Z"/>
+
+                    <path fill="url(#PSgrad_2)"
+                          d="M971.000,471.000 L1166.000,471.000 C1167.104,471.000 1168.000,471.895 1168.000,473.000 L1168.000,479.000 C1168.000,480.104 1167.104,481.000 1166.000,481.000 L971.000,481.000 C969.895,481.000 969.000,480.104 969.000,479.000 L969.000,473.000 C969.000,471.895 969.895,471.000 971.000,471.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1026px" y="355.102px">Documentary</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1033px" y="385.062px">111,510</text>
+                <!--右矩形-->
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,-0.000 L1647.000,-0.000 C1649.209,-0.000 1651.000,1.791 1651.000,4.000 L1651.000,62.000 C1651.000,64.209 1649.209,66.000 1647.000,66.000 L1456.000,66.000 C1453.791,66.000 1452.000,64.209 1452.000,62.000 L1452.000,4.000 C1452.000,1.791 1453.791,-0.000 1456.000,-0.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1528px" y="22.0619999999999px">Animation</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1500px" y="52.0619999999999px">2,784,520</text>
+
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,83.000 L1647.000,83.000 C1649.209,83.000 1651.000,84.791 1651.000,87.000 L1651.000,145.000 C1651.000,147.209 1649.209,149.000 1647.000,149.000 L1456.000,149.000 C1453.791,149.000 1452.000,147.209 1452.000,145.000 L1452.000,87.000 C1452.000,84.791 1453.791,83.000 1456.000,83.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1531px" y="105.062px">Others</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1506px" y="135.062px">2,784,520</text>
+
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,166.000 L1647.000,166.000 C1649.209,166.000 1651.000,167.791 1651.000,170.000 L1651.000,228.000 C1651.000,230.209 1649.209,232.000 1647.000,232.000 L1456.000,232.000 C1453.791,232.000 1452.000,230.209 1452.000,228.000 L1452.000,170.000 C1452.000,167.791 1453.791,166.000 1456.000,166.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-size="14px" x="1531px" y="188.062px">Others</text>
+                    <text font-family="Akkurat Pro" fill="rgb(255, 255, 255)" font-weight="bold" font-size="20px" x="1516px" y="218.062px">111,510</text>
+
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,249.000 L1647.000,249.000 C1649.209,249.000 1651.000,250.791 1651.000,253.000 L1651.000,351.000 C1651.000,353.209 1649.209,355.000 1647.000,355.000 L1456.000,355.000 C1453.791,355.000 1452.000,353.209 1452.000,351.000 L1452.000,253.000 C1452.000,250.791 1453.791,249.000 1456.000,249.000 Z"/>
+
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,372.000 L1647.000,372.000 C1649.209,372.000 1651.000,373.791 1651.000,376.000 L1651.000,424.000 C1651.000,426.209 1649.209,428.000 1647.000,428.000 L1456.000,428.000 C1453.791,428.000 1452.000,426.209 1452.000,424.000 L1452.000,376.000 C1452.000,373.791 1453.791,372.000 1456.000,372.000 Z"/>
+                    <path fill-rule="evenodd"  fill="rgb(254, 197, 63)"
+                          d="M1456.000,445.000 L1647.000,445.000 C1649.209,445.000 1651.000,446.791 1651.000,449.000 L1651.000,477.000 C1651.000,479.209 1649.209,481.000 1647.000,481.000 L1456.000,481.000 C1453.791,481.000 1452.000,479.209 1452.000,477.000 L1452.000,449.000 C1452.000,446.791 1453.791,445.000 1456.000,445.000 Z"/>
+                    <path fill="url(#PSgrad_3)"
+                          d="M1456.000,445.000 L1647.000,445.000 C1649.209,445.000 1651.000,446.791 1651.000,449.000 L1651.000,477.000 C1651.000,479.209 1649.209,481.000 1647.000,481.000 L1456.000,481.000 C1453.791,481.000 1452.000,479.209 1452.000,477.000 L1452.000,449.000 C1452.000,446.791 1453.791,445.000 1456.000,445.000 Z"/>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="318px" y="32px">&#51;&#52;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="318px" y="117px">&#51;&#56;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="318px" y="208px">&#49;&#55;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="323px" y="290px">&#53;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="323px" y="372px">&#52;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(8, 124, 255)" font-weight="bold" font-size="20px" x="323px" y="441px">&#50;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(30, 155, 173)" font-weight="bold" font-size="20px" x="799px" y="60px">&#51;&#52;&#37;</text>
+                    <text font-family="Akkurat Pro" fill="rgb(254, 197, 63)" font-weight="bold" font-size="20px" x="1301px" y="63px">&#49;&#52;&#37;</text>
+                </svg>
+
+
+
+                    <!--<svg style=" z-index: 1;position: relative;" width="343" height="563" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">-->
+                        <!--&lt;!&ndash; Created with SVG-edit - http://svg-edit.googlecode.com/ &ndash;&gt;-->
+                        <!--<defs>-->
+                            <!--<linearGradient id="svg_8" x2="1" y2="0" spreadMethod="pad" x1="0" y1="0">-->
+                                <!--<stop stop-color="#1236F7" offset="0"/>-->
+                                <!--<stop stop-color="#1696FC" offset="1"/>-->
+                            <!--</linearGradient>-->
+                        <!--</defs>-->
+                        <!--<g>-->
+                            <!--<title>Layer 1</title>-->
+                            <!--<rect fill="url(#svg_8)" stroke="#000000" stroke-width="0" x="40" y="105-->
+<!--" width="195" height="457" id="svg_1"/>-->
+                            <!--<path fill="url(#svg_8)" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" d="m125.33334,164l1.33333,0l0,1.33333l-1.33333,0l0,-1.33333z" id="svg_5"/>-->
+                        <!--</g>-->
+                    <!--</svg>-->
+                    <!--<svg style="position: relative;z-index: 1;-->
+<!--top: -3.8rem;left: 1.7rem" width="200" height="70" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">-->
+                        <!--&lt;!&ndash; Created with SVG-edit - http://svg-edit.googlecode.com/ &ndash;&gt;-->
+                        <!--<defs>-->
+
+                            <!--<linearGradient id="svg_6" x2="1" y2="0" spreadMethod="pad" x1="0" y1="0">-->
+                                <!--<stop stop-color="#1D96A9" offset="0"/>-->
+                                <!--<stop stop-color="#2ED2E0" offset="1"/>-->
+                            <!--</linearGradient>-->
+                        <!--</defs>-->
+                        <!--<g>-->
+                            <!--<title>Layer 1</title>-->
+                            <!--<path id="svg_5" d="m125.33334,164l1.33333,0l0,1.33333l-1.33333,0l0,-1.33333z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="url(#svg_2)"/>-->
+                            <!--<rect ry="3" rx="3" id="svg_1" height="70" width="200" y="0" x="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="url(#svg_6)"/>-->
+                        <!--</g>-->
+                    <!--</svg>-->
+            </div>
+          </div>
+            <!--6-->
+            <div class="bod_1 wrap_row_6_box clear">
+                <div class="fl item_box">
+                    <div class="pa gl_title">Customer Retention</div>
+                    <div class="w_100 h_100" id="charts_10"></div>
+                    <div class="layui-form pa">
+                        <select class="select_" name="" id="">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Mobile Traffic Consumption</div>
+                    <div class="w_100 h_100" id="charts_11"></div>
+                </div>
+                <div class="fl item_box">
+                    <div class="pa gl_title">Network Type</div>
+                    <div class="w_100 h_100" id="charts_12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../protds/jquery-3.1.1.js"></script>
+    <script src="../js/echarts/echarts.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../css/layui-v2.2.5/layui/layui.js"></script>
+    <script src="../css/layui-v2.2.5/layui/layui.all.js"></script>
+    <script src="../protds/myCommon.js"></script>
+    <script src="../js/analytics_user.js"></script>
+</body>
+</html>
